@@ -1,15 +1,15 @@
-import QuiverForm from "./components/QuiverForm";
-import QuiverSearch from "./components/QuiverSearch";
-import QuiverList from "./components/QuiverList";
-import QuiverValue from "./components/QuiverValue";
+import SurfboardForm from "./components/SurfboardForm";
+import SurfboardSearch from "./components/SurfboardSearch";
+import SurfboardList from "./components/SurfboardList";
+import SurfboardValue from "./components/SurfboardValue";
 
 function App() {
   return (
     <div>
-      <QuiverForm />
-      <QuiverSearch />
-      <QuiverList />
-      <QuiverValue />
+      <SurfboardForm />
+      <SurfboardSearch />
+      <SurfboardList />
+      <SurfboardValue />
     </div>
   );
 }
