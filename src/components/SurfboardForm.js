@@ -31,7 +31,6 @@ function SurfboardForm() {
           <div className="field">
             <label className="label">Name</label>
             <input
-              autoFocus
               className="input is-expanded"
               value={name}
               onChange={handleNameChange}
