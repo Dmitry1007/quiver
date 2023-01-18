@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { changeName, changeCost } from "../store";
+import { changeName, changeCost, addSurfboard } from "../store";
 
 function SurfboardForm() {
   const dispatch = useDispatch();
@@ -17,10 +17,16 @@ function SurfboardForm() {
     dispatch(changeCost(surfboardCost));
   };
 
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log("Submitting", "name", name, "cost", cost);
+    dispatch(addSurfboard({ name, cost }));
+  };
+
   return (
     <div className="surfboard-form panel">
       <h4 className="subtitle is-3">Add Surfboard</h4>
-      <form>
+      <form onSubmit={handleSubmit}>
         <div className="field-group">
           <div className="field">
             <label className="label">Name</label>
@@ -38,6 +44,9 @@ function SurfboardForm() {
               onChange={handleCostChange}
               type="number"
             />
+          </div>
+          <div className="field">
+            <button className="button is-link">Submit</button>
           </div>
         </div>
       </form>

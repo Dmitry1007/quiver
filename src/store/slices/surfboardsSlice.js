@@ -14,7 +14,7 @@ const surfboardsSlice = createSlice({
       state.surfboards.push({
         name: action.payload.name,
         cost: action.payload.cost,
-        id: nanoid,
+        id: nanoid(),
       });
     },
     removeSurfboard(state, action) {
