@@ -4,8 +4,10 @@ import { deleteSurfboard } from "../store";
 function SurfboardList() {
   const dispatch = useDispatch();
 
-  const surfboards = useSelector((state) => {
-    return state.surfboards.data;
+  const surfboards = useSelector(({ surfboards: { data, searchTerm } }) => {
+    return data.filter((surfboard) =>
+      surfboard.name.toLowerCase().includes(searchTerm.toLowerCase())
+    );
   });
 
   const handleSurfboardDelete = (id) => {
