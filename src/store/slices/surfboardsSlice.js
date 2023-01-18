@@ -4,14 +4,14 @@ const surfboardsSlice = createSlice({
   name: "surfboards",
   initialState: {
     searchTerm: "",
-    surfboards: [],
+    data: [],
   },
   reducers: {
     changeSearchTerm(state, action) {
       state.searchTerm = action.payload;
     },
     addSurfboard(state, action) {
-      state.surfboards.push({
+      state.data.push({
         name: action.payload.name,
         cost: action.payload.cost,
         id: nanoid(),
@@ -19,10 +19,10 @@ const surfboardsSlice = createSlice({
     },
     removeSurfboard(state, action) {
       // action.payload should be the id of the surfboard
-      const updated = state.surfboards.filter((surfboard) => {
+      const updated = state.data.filter((surfboard) => {
         return surfboard.id !== action.payload;
       });
-      state.surfboards = updated;
+      state.data = updated;
     },
   },
 });
