@@ -5,7 +5,7 @@ import SurfboardValue from "./components/SurfboardValue";
 
 function App() {
   return (
-    <div>
+    <div className="container is-fluid">
       <SurfboardForm />
       <SurfboardSearch />
       <SurfboardList />
