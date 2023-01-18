@@ -3,7 +3,7 @@ import {
   surfboardsReducer,
   changeSearchTerm,
   addSurfboard,
-  removeSurfboard,
+  deleteSurfboard,
 } from "./slices/surfboardsSlice";
 import { formReducer, changeName, changeCost } from "./slices/formSlice";
 
@@ -18,7 +18,7 @@ export {
   store,
   changeSearchTerm,
   addSurfboard,
-  removeSurfboard,
+  deleteSurfboard,
   changeName,
   changeCost,
 };

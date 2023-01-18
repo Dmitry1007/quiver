@@ -17,7 +17,7 @@ const surfboardsSlice = createSlice({
         id: nanoid(),
       });
     },
-    removeSurfboard(state, action) {
+    deleteSurfboard(state, action) {
       // action.payload should be the id of the surfboard
       const updated = state.data.filter((surfboard) => {
         return surfboard.id !== action.payload;
@@ -27,6 +27,6 @@ const surfboardsSlice = createSlice({
   },
 });
 
-export const { changeSearchTerm, addSurfboard, removeSurfboard } =
+export const { changeSearchTerm, addSurfboard, deleteSurfboard } =
   surfboardsSlice.actions;
 export const surfboardsReducer = surfboardsSlice.reducer;
