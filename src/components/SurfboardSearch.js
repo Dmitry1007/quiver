@@ -11,6 +11,7 @@ function SurfboardSearch() {
   const handleSearchTermChange = (event) => {
     dispatch(changeSearchTerm(event.target.value));
   };
+
   return (
     <div className="list-header">
       <h3 className="title is-3">My Surfboards</h3>

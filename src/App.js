@@ -1,7 +1,6 @@
 import SurfboardForm from "./components/SurfboardForm";
 import SurfboardSearch from "./components/SurfboardSearch";
 import SurfboardList from "./components/SurfboardList";
-import SurfboardValue from "./components/SurfboardValue";
 
 function App() {
   return (
@@ -9,7 +8,6 @@ function App() {
       <SurfboardForm />
       <SurfboardSearch />
       <SurfboardList />
-      <SurfboardValue />
     </div>
   );
 }

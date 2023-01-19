@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { deleteSurfboard } from "../store";
+import SurfboardValue from "./SurfboardValue";
 
 function SurfboardList() {
   const dispatch = useDispatch();
@@ -34,6 +35,7 @@ function SurfboardList() {
     <div className="surfboard-list">
       {renderedSurfboards}
       <hr />
+      <SurfboardValue surfboards={surfboards} />
     </div>
   );
 }
