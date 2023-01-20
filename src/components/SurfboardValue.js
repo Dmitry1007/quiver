@@ -1,13 +1,18 @@
-function SurfboardValue({ surfboards }) {
-  const computedValue = () => {
-    let value = 0;
-    surfboards.map((surfboard) => {
-      value += surfboard.cost;
-    });
-    return value;
-  };
+import { useSelector } from "react-redux";
 
-  return <div className="surfboard-value">Total Cost - ${computedValue()}</div>;
+function SurfboardValue() {
+  const totalCost = useSelector(({ surfboards: { data, searchTerm } }) => {
+    const filteredSurfboards = data.filter((surfboard) =>
+      surfboard.name.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+    let cost = 0;
+    for (let surfboard of filteredSurfboards) {
+      cost += surfboard.cost;
+    }
+    return cost;
+  });
+
+  return <div className="surfboard-value">Total Cost: - ${totalCost}</div>;
 }
 
 export default SurfboardValue;
