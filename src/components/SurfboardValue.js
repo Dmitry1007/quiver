@@ -5,11 +5,10 @@ function SurfboardValue() {
     const filteredSurfboards = data.filter((surfboard) =>
       surfboard.name.toLowerCase().includes(searchTerm.toLowerCase())
     );
-    let cost = 0;
-    for (let surfboard of filteredSurfboards) {
-      cost += surfboard.cost;
-    }
-    return cost;
+    return filteredSurfboards.reduce(
+      (acc, surfboard) => acc + surfboard.cost,
+      0
+    );
   });
 
   return <div className="surfboard-value">Total Cost: - ${totalCost}</div>;
